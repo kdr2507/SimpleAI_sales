@@ -31,9 +31,7 @@ for i in range(5001):
     sess.run(train, feed_dict={x: xData, y: yData})
     sess.run(work_time_train, feed_dict={x: xData, sales: yData})
     if(i % 500 == 0):
-        print("트레이닝 횟수 : ", i, sess.run(cost_function, feed_dict={
-            x: xData, y: yData}), "예상 매출액 계산중 : ", sess.run(sales, feed_dict={x: [10]}))
+        print("트레이닝 횟수 : ", i, sess.run(cost_function, feed_dict={x: xData, y: yData}), "예상 매출액 계산중 : ", sess.run(sales, feed_dict={x: [10]}))
 
 print("노동시간에 따른 예상 매출액 : ", sess.run(sales[0], feed_dict={x: [10]}), "원")
-print("하루 매출액에 따른 예상 노동시간 :", sess.run(
-    work_time[0], feed_dict={sales: [250000]}), "시간")
+print("하루 매출액에 따른 예상 노동시간 :", sess.run(work_time[0], feed_dict={sales: [250000]}), "시간")
